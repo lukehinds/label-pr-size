@@ -24,9 +24,13 @@ jobs:
       uses: actions/checkout@v2
 
     - name: PR Size Labeler
-      uses: lukehinds/pr-size-labeler@v1.0.0
+      uses: lukehinds/label-pr-size@v1.0.0
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        base-sha: ${{ github.event.pull_request.base.sha }}
+        head-sha: ${{ github.event.pull_request.head.sha }}
+        repository: ${{ github.repository }}
+        pr-number: ${{ github.event.pull_request.number }}
 ```
 
 # Configuration
