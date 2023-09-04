@@ -24,7 +24,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: PR Size Labeler
-      uses: YOUR_USERNAME/pr-size-labeler@v1.0.0
+      uses: lukehinds/pr-size-labeler@v1.0.0
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
