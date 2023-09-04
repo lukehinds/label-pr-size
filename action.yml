@@ -7,8 +7,16 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - "${{ github.event.pull_request.base.sha }}"
-    - "${{ github.event.pull_request.head.sha }}"
-    - "${{ github.repository }}"
-    - "${{ github.event.pull_request.number }}"
+inputs:
+  base-sha:
+    description: 'Base SHA of the PR'
+    required: true
+  head-sha:
+    description: 'Head SHA of the PR'
+    required: true
+  repository:
+    description: 'GitHub repository'
+    required: true
+  pr-number:
+    description: 'Pull request number'
+    required: true
