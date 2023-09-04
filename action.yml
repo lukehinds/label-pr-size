@@ -1,4 +1,4 @@
-name: 'PR Size Labeler'
+name: 'Label PR Size'
 description: 'Labels PRs based on their size.'
 author: 'Luke Hinds'
 branding:
