@@ -19,6 +19,8 @@ if ! [[ "$BASE_SHA" =~ ^[0-9a-f]{40}$ ]] || ! [[ "$HEAD_SHA" =~ ^[0-9a-f]{40}$ ]
     exit 1
 fi
 
+git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
 # Compute the number of lines changed in the PR
 LINES_CHANGED=$(git diff --shortstat $BASE_SHA..$HEAD_SHA | awk '{print $4}')
 
