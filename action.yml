@@ -1,0 +1,14 @@
+name: 'PR Size Labeler'
+description: 'Labels PRs based on their size.'
+author: 'Luke Hinds'
+branding:
+  icon: 'tag'
+  color: 'blue'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - "${{ github.event.pull_request.base.sha }}"
+    - "${{ github.event.pull_request.head.sha }}"
+    - "${{ github.repository }}"
+    - "${{ github.event.pull_request.number }}"
