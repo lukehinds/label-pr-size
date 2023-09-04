@@ -1,9 +1,9 @@
 #!/bin/bash
 
-BASE_SHA=$1
-HEAD_SHA=$2
-REPO=$3
-PR_NUMBER=$4
+BASE_SHA=$INPUT_BASE_SHA
+HEAD_SHA=$INPUT_HEAD_SHA
+REPO=$INPUT_REPOSITORY
+PR_NUMBER=$INPUT_PR_NUMBER
 
 # Compute the number of lines changed in the PR
 LINES_CHANGED=$(git diff --shortstat $BASE_SHA..$HEAD_SHA | awk '{print $4}')
