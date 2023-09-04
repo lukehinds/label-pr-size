@@ -5,6 +5,9 @@ HEAD_SHA=$INPUT_HEAD_SHA
 REPO=$INPUT_REPOSITORY
 PR_NUMBER=$INPUT_PR_NUMBER
 
+echo "Debug: BASE_SHA = $BASE_SHA"
+echo "Debug: HEAD_SHA = $HEAD_SHA"
+
 if [ -z "$BASE_SHA" ] || [ -z "$HEAD_SHA" ]; then
     echo "Error: BASE_SHA or HEAD_SHA is not set."
     exit 1
